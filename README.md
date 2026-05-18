@@ -1,5 +1,4 @@
-# Mini_Jogo_Usando_Class-Python-
-⚔️ Mini RPG de Terminal em Python
+# ⚔️ Mini RPG de Terminal em Python
 Jogo de RPG baseado em texto onde o jogador escolhe uma classe e enfrenta monstros aleatórios com desafios de reflexo em tempo real.
 
 🚀 Nota de Aprendizado: Este projeto foi o meu primeiro contato prático com Classes (Programação Orientada a Objetos) no Python! Aprendi a estruturar entidades, passar objetos como argumentos e gerenciar estados de forma organizada.
