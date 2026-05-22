@@ -27,7 +27,7 @@ class Jogador():
                 print(f"O Player atacou! Tirou {dano} de dano.")
                 return # Sai do loop e encerra o turno do jogador
                     
-            time.sleep(0.1) # Evita sobrecarregar o processador no loop
+            time.sleep(0.05) # Evita sobrecarregar o processador no loop
 
 # ==========================================
 # CLASSE DO MONSTRO
@@ -62,23 +62,26 @@ class Monstro:
         else:
             x = 1.5    # Outras classes têm menos tempo
 
-        # Sorteia uma letra aleatória do alfabeto para o Quick Time Event (QTE)
-        letra = random.choice(string.ascii_lowercase)
+        # Junta letras minúsculas, números e símbolos
+        caracteres_gerais = string.ascii_lowercase + string.digits
+
+        # Sorteia um caractere
+        caractere = random.choice(caracteres_gerais)
         
         # Loop do cronômetro de esquiva (QTE)
         while x >= 0:
             print("-=" * 21)
-            print(f"{f'APERTE \033[1;33m{letra.upper()}\033[0m':^50}") # Letra colorida em amarelo
+            print(f"{f'APERTE \033[1;33m{caractere.upper()}\033[0m':^50}") # Letra colorida em amarelo
             print("-=" * 21)
             print(f">> {x:.1f}", flush=True)
             x -= 0.1
 
             # Se o jogador apertar a letra certa a tempo, ele esquiva e não toma dano
-            if keyboard.is_pressed(letra):
+            if keyboard.is_pressed(caractere):
                 print("Que desvio!")
                 return # Encerra o turno do monstro sem causar dano
 
-            time.sleep(0.1)
+            time.sleep(0.05)
             os.system('cls' if os.name == 'nt' else 'clear')
 
         # Caso o tempo acabe e o jogador não desvie, calcula o dano do monstro
