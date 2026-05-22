@@ -122,7 +122,7 @@ match classe:
         mago = Jogador(nome, 100, "5 a 20")
         player = mago
     case 2:    
-        guerreiro = Jogador(nome, 300, "3 a 10")
+        guerreiro = Jogador(nome, 200, "3 a 10")
         player = guerreiro
     case 3:    
         assassino = Jogador(nome, 1, "10 a 40")
